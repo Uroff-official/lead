@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div id="form-container">
+
+            <div class="page-header text-center">
+                <img class="loguito" src="./img/logo.png"></img>
+
+                <!-- Links to nested states using relative paths -->
+                <!-- Add active class if current state matches ui-sref -->
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".espacios"><span style="color:#fff;">1</span> Espacios</a>
+                    <!--<a ui-sref-active="active" ui-sref=".profile"><span>1</span> Profile</a>-->
+                    <a ui-sref-active="active" ui-sref=".equipamiento"><span style="color:#fff;">2</span> Equipamiento</a>
+                    <a ui-sref-active="active" ui-sref=".interests"><span style="color:#fff;">3</span> Anfitrión</a>
+                    <a ui-sref-active="active" ui-sref=".payment"><span style="color:#fff;">4</span> Contacto</a>
+                    <a ui-sref-active="active" ui-sref=".greetings"><span style="color:#fff;">5</span> Gracias!</a>
+                </div>
+            </div>
+
+            <!-- Use ng-submit to catch form submission and use our app's processForm function -->
+            <form id="signup-form" ng-submit="processForm()">
+
+                <!-- Nested state views will be injected here -->
+                <div id="form-views" class="text-center" ui-view></div>
+            </form>
+
+        </div>
+
+    <!--<pre>
+            {{ espacios }}
+        </pre>-->
+
+    </div>
+</div>

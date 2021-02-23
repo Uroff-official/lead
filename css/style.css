@@ -1,0 +1,135 @@
+/* BASIC STYLINGS
+=========================================================== */
+
+body {
+    padding-top: 20px;
+}
+
+/* Form styling */
+#form-container {
+    background: #2f2f2f;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+
+#form-container .page-header {
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Numbered buttons */
+#status-buttons { }
+
+#status-buttons a {
+    color: #0A3459;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#status-buttons a:hover {
+    text-decoration: none;
+}
+
+/* Style span as circled number */
+#status-buttons span {
+    background: #080808;
+    display: block;
+    height: 30px;
+    margin: 0 auto 10px;
+    padding-top: 5px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#status-buttons a.active span {
+    background: #00bc8c;
+}
+
+
+/* ANIMATION STYLINGS
+=========================================================== */
+#signup-form {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 30px;
+    background: #fff;
+}
+
+#form-views {
+    width: auto;
+}
+
+/* Basic styling for entering and leaving
+   Left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+}
+
+/* Enter animation */
+#form-views.ng-enter {
+    -webkit-animation: slideInRight 0.5s both ease;
+    -moz-animation: slideInRight 0.5s both ease;
+    animation: slideInRight 0.5s both ease;
+}
+
+/* Leave animation */
+#form-views.ng-leave {
+    -webkit-animation: slideOutLeft 0.5s both ease;
+    -moz-animation: slideOutLeft 0.5s both ease;
+    animation: slideOutLeft 0.5s both ease;
+}
+
+/* ANIMATIONS
+=========================================================== */
+/* Slide out to the left */
+@keyframes slideOutLeft {
+    to { transform: translateX(-200%); }
+}
+
+@-moz-keyframes slideOutLeft {
+     to { -moz-transform: translateX(-200%); }
+}
+
+@-webkit-keyframes slideOutLeft {
+     to { -webkit-transform: translateX(-200%); }
+}
+
+/* Slide in from the right */
+@keyframes slideInRight {
+    from { transform: translateX(200%); }
+    to { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from { -moz-transform: translateX(200%); }
+    to { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from { -webkit-transform: translateX(200%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+.botoncito{
+position: absolute;
+background: #D72162;
+border-radius: 50px;
+}
+
+
+.loguito{
+
+  width: 350px;
+  height: 221px;
+}
