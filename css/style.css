@@ -9,15 +9,14 @@ body {
 #form-container {
     background: #2f2f2f;
     margin-bottom: 20px;
-    border-radius: 30px;
+    border-radius: 80px;
 }
 
 #form-container .page-header {
     background: #FFFFFF;
     margin: 0;
     padding: 0px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 50px;
 }
 
 /* Numbered buttons */
@@ -60,6 +59,7 @@ body {
     overflow: hidden;
     padding: 30px;
     background: #fff;
+    border-bottom-right-radius: 50px;
 }
 
 #form-views {
