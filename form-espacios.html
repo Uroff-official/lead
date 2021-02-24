@@ -1,38 +1,40 @@
 <label >¿Qué tipo de espacio tiene disponible?</label>
-<div class="action-checkbox text-center">
-
-    <div class="radio">
+<div class="action-checkbox">
+  <div class="action-checkbox col-lg-2 col-md-2"></div>
+  <div class="action-checkbox col-lg-8 col-md-8">
+    <div class="radio" style="text-align:left;">
         <label style="font-size:15px">
             <input type="checkbox" ng-model="espacios.espacio1" value="primero">
             Hot desk (Mesón compartido o individual en espacios comunes de la propiedad)
         </label>
     </div>
 
-    <div class="radio">
+    <div class="radio" style="text-align:left;">
         <label style="font-size:15px">
             <input type="checkbox" ng-model="espacios.espacio2" value="segundo">
             Sala de reunión (Equipada para más de 5 personas)
         </label>
     </div>
 
-    <div class="radio">
+    <div class="radio" style="text-align:left;">
         <label style="font-size:15px">
             <input type="checkbox" ng-model="espacios.espacio3" value="tercero">
             Oficina privada (oficina equipada con escritorio privado)
         </label>
     </div>
 
-    <div class="radio">
+    <div class="radio" style="text-align:left;">
         <label style="font-size:15px">
             <input type="checkbox" ng-model="espacios.espacio4" value="cuarto">
             Room office (oficina en hotel)
         </label>
     </div>
 
-<div class="form-group row">
-    <div class="col-xs-6 col-xs-offset-3">
+<div class="form-group row" style="text-align:center;">
         <a ui-sref="form.equipamiento" class="btn btn-block btn-info botoncito">
             Siguiente <!--<span class="glyphicon glyphicon-circle-arrow-right"></span>-->
         </a>
-    </div>
+</div>
+</div>
+<div class="action-checkbox col-lg-2 col-md-2"></div>
 </div>
