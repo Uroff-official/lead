@@ -20,7 +20,7 @@
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
-    <input type="text" class="form-control" ng-model="espacios.correo">
+    <input type="email" class="form-control" ng-model="espacios.correo">
     </div>
 </div>
 
@@ -29,7 +29,7 @@
 <div class="action-checkbox col-lg-2 col-md-2"></div>
 <div class="action-checkbox col-lg-8 col-md-8">
 <div class="form-group row" style="text-align:center;">
-    <button type="submit" class="btn btn-block btn-info botoncito">Enviar!</button>
+    <button disabled ng-disabled="((espacios.nombre != '') && (espacios.correo !='') ) ? false : true" type="submit" class="btn btn-block btn-info botoncito">Enviar!</button>
 </div>
 </div>
 <div class="action-checkbox col-lg-2 col-md-2"></div>

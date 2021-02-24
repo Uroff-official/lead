@@ -31,7 +31,7 @@
     </div>
 
 <div class="form-group row" style="text-align:center;">
-        <a ui-sref="form.equipamiento" class="btn btn-block btn-info botoncito">
+        <a ng-disabled="(espacios.espacio1||espacios.espacio2||espacios.espacio3||espacios.espacio4) ?  false : true   " ui-sref="form.equipamiento" class="btn btn-block btn-info botoncito">
             Siguiente <!--<span class="glyphicon glyphicon-circle-arrow-right"></span>-->
         </a>
 </div>
