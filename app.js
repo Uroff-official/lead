@@ -18,9 +18,9 @@ formApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'form-espacios.html'
         })
 
-        .state('ubicacion', {
+        .state('form.ubicacion', {
             url: '/ubicacion',
-            templateUrl: 'ubicacion.html',
+            templateUrl: 'form-ubicacion.html',
             controller: 'mapCtrl'
         })
 
