@@ -1,12 +1,7 @@
-<div>
-    <google-map id="mymap"
-            center="center"
-            zoom="zoom"
-            draggable="true"
-            mark-click="false">
-            <markers>
-                <marker ng-repeat="marker in markers" coords="marker">
-                </marker>
-            </markers>
-    </google-map>
+<div ng-controller="MapCtrl">
+    <div id="map"></div>
+    <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+         <label id="names" >{{marker.title}}</label></a>
+    </div>
 </div>
