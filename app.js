@@ -164,8 +164,7 @@ formApp.controller('mapCtrl', ['$scope','$rootScope', '$state', function ($scope
       {
          "latitude":33.22,
          "longitude":35.33
-      },
-      ...
+      }
   ];
 
   $scope.center = {
