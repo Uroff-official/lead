@@ -1,2 +1,12 @@
-
-  <div ng-init="initMap()" id="map">
+<div>
+    <google-map id="mymap"
+            center="center"
+            zoom="zoom"
+            draggable="true"
+            mark-click="false">
+            <markers>
+                <marker ng-repeat="marker in markers" coords="marker">
+                </marker>
+            </markers>
+    </google-map>
+</div>

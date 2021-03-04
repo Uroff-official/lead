@@ -160,47 +160,20 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
 formApp.controller('mapCtrl', ['$scope','$rootScope', '$state', function ($scope, $rootScope, $state){
 
-  console.log("carga mapCtrl al principio");
+  $scope.myMarkers = [
+      {
+         "latitude":33.22,
+         "longitude":35.33
+      },
+      ...
+  ];
 
- var map, infoWindow;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 6
-    });
-    infoWindow = new google.maps.InfoWindow;
+  $scope.center = {
+      latitude: 33.895497,
+      longitude: 35.480347,
+  };
 
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
-        infoWindow.open(map);
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-  }
-  /** agregue esto 09/07/2019 22:39 para que se ejecute la funcion al cargarse el controlador**/
-
-initMap();
-
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-                          'Error: The Geolocation service failed.' :
-                          'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-  }
-
-  console.log("carga mapCtrl al final");
+  $scope.zoom = 13;
+  $scope.markers = $scope.myMarkers;
+  $scope.fit = true;
 }]);
