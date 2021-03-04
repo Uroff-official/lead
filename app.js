@@ -59,7 +59,7 @@ formApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('form.ubicacion', {
             url: '/ubicacion',
             templateUrl: 'form-ubicacion.html',
-            controller: 'mapCtrl'
+            controller: 'MapCtrl'
         })
 
     // url will be (/form/interests)
