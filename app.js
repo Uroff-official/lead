@@ -198,13 +198,31 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
 formApp.controller('MapCtrl', function ($scope) {
 
-    var mapOptions = {
-        zoom: 12,
-        center: new google.maps.LatLng(-33.463637,-70.6733087),
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-    }
 
+  $scope.map = new google.maps.Map(document.getElementById('map'));
+
+
+  var mapOptions = {
+      zoom: 12,
+      center: new google.maps.LatLng(-33.463637,-70.6733087),
+      mapTypeId: google.maps.MapTypeId.TERRAIN
+  }
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+    // Center on user's current location if geolocation prompt allowed
+    var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    $scope.map.setCenter(initialLocation);
+    $scope.map.setZoom(13);
+  }, function(positionError) {
+    // User denied geolocation prompt - default to Chicago
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  });
+
+
+
+
+
+
 
     $scope.markers = [];
 
