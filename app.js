@@ -227,7 +227,7 @@ formApp.controller('MapCtrl', function ($scope) {
     var citiesInfo = new google.maps.Marker({
       map: $scope.map,
       position: new google.maps.LatLng(citi.lat, citi.long),
-      title: "Tu oficina
+      title: "Tu oficina"
     });
 
 
