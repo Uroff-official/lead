@@ -166,6 +166,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 formApp.controller('MapCtrl', function ($scope) {
 
   angular.element(document).ready(function () {
+  var winInfo = new google.maps.InfoWindow();
   $scope.map = new google.maps.Map(document.getElementById('map'));
 
   $scope.lat = undefined;
@@ -199,8 +200,8 @@ formApp.controller('MapCtrl', function ($scope) {
       citiesInfo.content = '<div>' + 'Tu oficina' + '</div>';
 
       google.maps.event.addListener(citiesInfo, 'click', function() {
-        winInfo.setContent('<h1>' + citiesInfo.title + '</h1>' + citiesInfo.content);
-        winInfo.open($scope.gMap, citiesInfo);
+        winInfo.setContent('<h1>' + 'tu oficina' + '</h1>' + 'Esta es la posición que marcó para su oficina');
+        winInfo.open($scope.map, citiesInfo);
       });
 
 });
