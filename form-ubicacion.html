@@ -1,13 +1,11 @@
 
+<input gm-places-autocomplete
+  type="text"
+  placeholder="Buscar Dirección"
+  ng-model="autocomplete"></input>
 
+  
 <div ng-controller="MapCtrl">
-
-  <input gm-places-autocomplete
-    type="text"
-    placeholder="Buscar Dirección"
-    ng-model="autocomplete"></input>
-
-    
     <div id="map" style="/* position: relative; */overflow: hidden;"></div>
     <!--<div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
          <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
