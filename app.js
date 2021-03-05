@@ -198,7 +198,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
 formApp.controller('MapCtrl', function ($scope) {
 
-  angular.element(document).ready(function () { 
+  angular.element(document).ready(function () {
   $scope.map = new google.maps.Map(document.getElementById('map'));
 
 
@@ -219,8 +219,9 @@ formApp.controller('MapCtrl', function ($scope) {
   });
 
 
-
-
+    const input = document.getElementById("pac-input");
+    const searchBox = new google.maps.places.SearchBox(input);
+    $scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
 
 
