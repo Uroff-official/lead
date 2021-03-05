@@ -1,6 +1,6 @@
 var formApp = angular.module('formApp', ['ngAnimate', 'ui.router','gm']);
 
-var location = undefined;
+var location = '';
 
 
 
