@@ -201,7 +201,8 @@ formApp.controller('MapCtrl', function ($scope) {
   angular.element(document).ready(function () {
   $scope.map = new google.maps.Map(document.getElementById('map'));
 
-
+  $scope.lat = undefined;
+  $scope.lng = undefined;
   var mapOptions = {
       zoom: 15,
       center: new google.maps.LatLng(-33.463637,-70.6733087),
@@ -213,15 +214,21 @@ formApp.controller('MapCtrl', function ($scope) {
     var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     $scope.map.setCenter(initialLocation);
     $scope.map.setZoom(15);
+    $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+    var location = $scope.autocomplete.getPlace().geometry.location;
+    $scope.lat = location.lat();
+    $scope.lng = location.lng();
+    $scope.$apply();
+    $scope.map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+});
   }, function(positionError) {
     // User denied geolocation prompt - default to Chicago
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
   });
 
 
-    const input = document.getElementById("pac-input");
-    const searchBox = new google.maps.places.SearchBox(input);
-    $scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+
 
 
 
