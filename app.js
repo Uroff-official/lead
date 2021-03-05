@@ -214,6 +214,19 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.lng = location.lng();
     $scope.$apply();
     $scope.map.setCenter(new google.maps.LatLng($scope.lat, $scope.lng));
+    var citiesInfo = new google.maps.Marker({
+      map: $scope.map,
+      position: new google.maps.LatLng($scope.lat, $scope.lng),
+      title: "Tu oficina"
+    });
+      citiesInfo.content = '<div>' + 'Tu oficina' + '</div>';
+
+      google.maps.event.addListener(citiesInfo, 'click', function() {
+        winInfo.setContent('<h1>' + 'tu oficina' + '</h1>' + 'Esta es la posición que marcó para su oficina');
+        winInfo.open($scope.map, citiesInfo);
+      });
+
+
 
 
 
