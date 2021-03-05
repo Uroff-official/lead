@@ -198,6 +198,11 @@ formApp.controller('MapCtrl', function ($scope) {
     });
       citiesInfo.content = '<div>' + 'Tu oficina' + '</div>';
 
+      google.maps.event.addListener(citiesInfo, 'click', function() {
+        winInfo.setContent('<h1>' + citiesInfo.title + '</h1>' + citiesInfo.content);
+        winInfo.open($scope.gMap, citiesInfo);
+      });
+
 });
   }, function(positionError) {
     // User denied geolocation prompt - default to Chicago
