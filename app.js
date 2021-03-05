@@ -132,6 +132,10 @@ formApp.controller('formController', function ($scope, $http, $state) {
         if($scope.espacios.correo){
           url = url + "&entry.1486648297="+$scope.espacios.correo;
         }
+
+        if($scope.autocomplete){
+          console.log($scope.autocomplete);
+        }
         //alert(url);
         $state.go("form.greetings");
         alert('Información Enviada!');
