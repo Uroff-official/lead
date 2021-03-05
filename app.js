@@ -135,7 +135,6 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
         if($scope.autocomplete){
           console.log($scope.autocomplete);
-
           url = url + "&entry.2132323958="+$scope.autocomplete;
         }
         //alert(url);
