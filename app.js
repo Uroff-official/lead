@@ -1,6 +1,6 @@
 var formApp = angular.module('formApp', ['ngAnimate', 'ui.router','gm']);
 
-
+var location = undefined;
 
 
 
@@ -133,9 +133,9 @@ formApp.controller('formController', function ($scope, $http, $state) {
           url = url + "&entry.1486648297="+$scope.espacios.correo;
         }
 
-        if($scope.autocomplete){
-          console.log($scope.autocomplete);
-          url = url + "&entry.2132323958="+$scope.autocomplete;
+        if(location){
+          console.log(location);
+          url = url + "&entry.2132323958="+location;
         }
         //alert(url);
         $state.go("form.greetings");
@@ -188,7 +188,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    var location = $scope.autocomplete.getPlace().geometry.location;
+    location = $scope.autocomplete.getPlace().geometry.location;
 
     $scope.lat = location.lat();
     $scope.lng = location.lng();
