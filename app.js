@@ -164,7 +164,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 });
 
 formApp.controller('MapCtrl', function ($scope) {
-
+  $scope.buscar = false;
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
   $scope.map = new google.maps.Map(document.getElementById('map'));
@@ -182,7 +182,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setCenter(initialLocation);
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
-
+    $scope.buscar = true;
     var location = $scope.autocomplete.getPlace().geometry.location;
 
     $scope.lat = location.lat();
@@ -208,6 +208,7 @@ formApp.controller('MapCtrl', function ($scope) {
     // User denied geolocation prompt - default to Chicago
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+    $scope.buscar = true;
     var location = $scope.autocomplete.getPlace().geometry.location;
     $scope.lat = location.lat();
     $scope.lng = location.lng();
