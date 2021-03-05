@@ -1,4 +1,4 @@
-var formApp = angular.module('formApp', ['ngAnimate', 'ui.router']);
+var formApp = angular.module('formApp', ['ngAnimate', 'ui.router','gm']);
 
 
 var cities = [
