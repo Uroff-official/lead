@@ -219,7 +219,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.lat = location.lat();
     $scope.lng = location.lng();
     $scope.$apply();
-    $scope.map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+    $scope.map.setCenter(new google.maps.LatLng($scope.lat, $scope.lng));
 });
   }, function(positionError) {
     // User denied geolocation prompt - default to Chicago
