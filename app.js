@@ -168,7 +168,6 @@ formApp.controller('MapCtrl', function ($scope) {
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
   $scope.map = new google.maps.Map(document.getElementById('map'));
-  $scope.autocomplete = undefined;
   $scope.lat = undefined;
   $scope.lng = undefined;
   var mapOptions = {
