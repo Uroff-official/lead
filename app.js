@@ -198,7 +198,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
 formApp.controller('MapCtrl', function ($scope) {
 
-
+  angular.element(document).ready(function () { 
   $scope.map = new google.maps.Map(document.getElementById('map'));
 
 
@@ -255,4 +255,7 @@ formApp.controller('MapCtrl', function ($scope) {
         google.maps.event.trigger(selectedMarker, 'click');
     }
 
+
+
+});
 });
