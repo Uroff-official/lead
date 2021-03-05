@@ -199,7 +199,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 formApp.controller('MapCtrl', function ($scope) {
 
     var mapOptions = {
-        zoom: 4,
+        zoom: 12,
         center: new google.maps.LatLng(-33.463637,-70.6733087),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
