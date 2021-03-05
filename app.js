@@ -189,6 +189,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
+    console.log($scope.autocomplete);
     locationi = $scope.autocomplete.getPlace().geometry.location;
 
     $scope.lat = locationi.lat();
