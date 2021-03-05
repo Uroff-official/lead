@@ -224,6 +224,15 @@ formApp.controller('MapCtrl', function ($scope) {
   }, function(positionError) {
     // User denied geolocation prompt - default to Chicago
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+    var location = $scope.autocomplete.getPlace().geometry.location;
+    $scope.lat = location.lat();
+    $scope.lng = location.lng();
+    $scope.$apply();
+    $scope.map.setCenter(new google.maps.LatLng($scope.lat, $scope.lng));
+
+
+
   });
 
 
