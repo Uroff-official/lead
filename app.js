@@ -192,7 +192,7 @@ formApp.controller('MapCtrl', function ($scope) {
       position: new google.maps.LatLng(citi.lat, citi.long),
       title: "Tu oficina"
     });
-
+    });
 
 });
   }, function(positionError) {
