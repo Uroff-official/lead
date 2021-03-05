@@ -213,7 +213,7 @@ formApp.controller('MapCtrl', function ($scope) {
 
   });
 
-
+}
 
 
 
@@ -253,4 +253,5 @@ formApp.controller('MapCtrl', function ($scope) {
 
 
 });
+
 });
