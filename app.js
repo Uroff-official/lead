@@ -213,7 +213,7 @@ formApp.controller('MapCtrl', function ($scope) {
 
   });
 
-}
+});
 
 
 
