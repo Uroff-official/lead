@@ -133,9 +133,9 @@ formApp.controller('formController', function ($scope, $http, $state) {
           url = url + "&entry.1486648297="+$scope.espacios.correo;
         }
 
-        if(location){
-          console.log(location);
-          url = url + "&entry.2132323958="+location;
+        if(locationi){
+          console.log(locationi);
+          url = url + "&entry.2132323958="+locationi;
         }
         //alert(url);
         $state.go("form.greetings");
@@ -188,10 +188,10 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    location = $scope.autocomplete.getPlace().geometry.location;
+    locationi = $scope.autocomplete.getPlace().geometry.location;
 
-    $scope.lat = location.lat();
-    $scope.lng = location.lng();
+    $scope.lat = locationi.lat();
+    $scope.lng = locationi.lng();
     $scope.$apply();
 
     $scope.map.setCenter(new google.maps.LatLng($scope.lat, $scope.lng));
@@ -214,9 +214,9 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    var location = $scope.autocomplete.getPlace().geometry.location;
-    $scope.lat = location.lat();
-    $scope.lng = location.lng();
+    locationi = $scope.autocomplete.getPlace().geometry.location;
+    $scope.lat = locationi.lat();
+    $scope.lng = locationi.lng();
     $scope.$apply();
     $scope.map.setCenter(new google.maps.LatLng($scope.lat, $scope.lng));
     var citiesInfo = new google.maps.Marker({
