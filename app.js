@@ -133,7 +133,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
           url = url + "&entry.1486648297="+$scope.espacios.correo;
         }
 
-        if($scope.autocomplete){
+        if(locationi){
           console.log(locationi);
           console.log($scope.autocomplete);
           url = url + "&entry.2132323958="+locationi;
