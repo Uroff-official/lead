@@ -215,11 +215,22 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setCenter(initialLocation);
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+
     var location = $scope.autocomplete.getPlace().geometry.location;
+
     $scope.lat = location.lat();
     $scope.lng = location.lng();
     $scope.$apply();
+
     $scope.map.setCenter(new google.maps.LatLng($scope.lat, $scope.lng));
+
+    var citiesInfo = new google.maps.Marker({
+      map: $scope.map,
+      position: new google.maps.LatLng(citi.lat, citi.long),
+      title: "Tu oficina
+    });
+
+
 });
   }, function(positionError) {
     // User denied geolocation prompt - default to Chicago
