@@ -196,7 +196,7 @@ formApp.controller('MapCtrl', function ($scope) {
       position: new google.maps.LatLng($scope.lat, $scope.lng),
       title: "Tu oficina"
     });
-
+      citiesInfo.content = '<div>' + 'Tu oficina' + '</div>';
 
 });
   }, function(positionError) {
