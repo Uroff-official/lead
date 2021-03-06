@@ -58,7 +58,7 @@ formApp.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 formApp.controller('formController', function ($scope, $http, $state) {
-
+    $scope.busqueda = undefined;
     // Store all form data in this object
     $scope.espacios = {};
     $scope.espacios.anfitrion = "si";
@@ -171,7 +171,6 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
 formApp.controller('MapCtrl', function ($scope) {
   $scope.buscar = false;
-  $scope.busqueda = undefined;
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
   $scope.map = new google.maps.Map(document.getElementById('map'));
