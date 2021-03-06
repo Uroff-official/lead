@@ -193,7 +193,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.geocoder = new google.maps.Geocoder();
     locationi = $scope.autocomplete.getPlace().geometry.location;
 
-    $scope.geocoder.geocode({ locationi }, (results, status) => {
+    $scope.geocoder.geocode({ location: locationi }, (results, status) => {
       if (status === "OK") {
         if (results[0]) {
           console.log(results[0].formatted_address);
