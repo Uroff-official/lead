@@ -135,7 +135,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
         if(locationi){
           console.log(locationi);
-          console.log($scope.autocomplete.busqueda);
+          console.log($scope.autocomplete);
           url = url + "&entry.2132323958="+locationi;
         }
         //alert(url);
@@ -170,7 +170,6 @@ formApp.controller('formController', function ($scope, $http, $state) {
 });
 
 formApp.controller('MapCtrl', function ($scope) {
-  $scope.autocomplete = {};
   $scope.buscar = false;
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
@@ -190,8 +189,8 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    console.log($scope.autocomplete.busqueda);
-    locationi = $scope.autocomplete.busqueda.getPlace().geometry.location;
+    console.log($autocomplete);
+    locationi = $scope.autocomplete.getPlace().geometry.location;
 
     $scope.lat = locationi.lat();
     $scope.lng = locationi.lng();
@@ -217,7 +216,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    locationi = $scope.autocomplete.busqueda.getPlace().geometry.location;
+    locationi = $scope.autocomplete.getPlace().geometry.location;
     $scope.lat = locationi.lat();
     $scope.lng = locationi.lng();
     $scope.$apply();
