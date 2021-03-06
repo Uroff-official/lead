@@ -191,9 +191,20 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
     $scope.geocoder = new google.maps.Geocoder();
-
-    console.log($scope.autocomplete);
     locationi = $scope.autocomplete.getPlace().geometry.location;
+
+    $scope.geocoder.geocode({ locationi }, (results, status) => {
+      if (status === "OK") {
+        if (results[0]) {
+          console.log(results[0].formatted_address);
+        } else {
+          window.alert("No results found");
+        }
+      } else {
+        window.alert("Geocoder failed due to: " + status);
+      }
+    });
+
 
     $scope.lat = locationi.lat();
     $scope.lng = locationi.lng();
