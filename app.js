@@ -136,7 +136,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
         if(locationi){
           //console.log(locationi);
           //console.log($scope.autocomplete);
-          url = url + "&entry.2132323958="+locationi;
+          url = url + "&entry.2132323958="+$scope.busqueda;
         }
         //alert(url);
         $state.go("form.greetings");
