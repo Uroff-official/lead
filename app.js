@@ -135,7 +135,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
         if(locationi){
           console.log(locationi);
-          console.log($scope.autocomplete);
+          console.log($scope.autocomplete.busqueda);
           url = url + "&entry.2132323958="+locationi;
         }
         //alert(url);
@@ -191,7 +191,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
     console.log($scope.autocomplete.busqueda);
-    locationi = $scope.autocomplete.getPlace().geometry.location;
+    locationi = $scope.autocomplete.busqueda.getPlace().geometry.location;
 
     $scope.lat = locationi.lat();
     $scope.lng = locationi.lng();
@@ -217,7 +217,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    locationi = $scope.autocomplete.getPlace().geometry.location;
+    locationi = $scope.autocomplete.busqueda.getPlace().geometry.location;
     $scope.lat = locationi.lat();
     $scope.lng = locationi.lng();
     $scope.$apply();
