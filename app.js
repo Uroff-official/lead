@@ -170,7 +170,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 });
 
 formApp.controller('MapCtrl', function ($scope) {
-  $scope.busqueda = {};
+  $scope.autocomplete = {};
   $scope.buscar = false;
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
@@ -190,7 +190,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.map.setZoom(15);
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
-    console.log($scope.busqueda);
+    console.log($scope.autocomplete.busqueda);
     locationi = $scope.autocomplete.getPlace().geometry.location;
 
     $scope.lat = locationi.lat();
