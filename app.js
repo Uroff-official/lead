@@ -2,7 +2,7 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router','gm']);
 
 var locationi = null;
 
-
+var busqueda = null;
 
 
 formApp.config(function ($stateProvider, $urlRouterProvider) {
@@ -58,7 +58,7 @@ formApp.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 formApp.controller('formController', function ($scope, $http, $state) {
-    $scope.busqueda = undefined;
+
     // Store all form data in this object
     $scope.espacios = {};
     $scope.espacios.anfitrion = "si";
@@ -136,7 +136,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
         if(locationi){
           //console.log(locationi);
           //console.log($scope.autocomplete);
-          url = url + "&entry.2132323958="+$scope.busqueda;
+          url = url + "&entry.2132323958="+busqueda;
         }
         //alert(url);
         $state.go("form.greetings");
@@ -195,7 +195,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.geocoder.geocode({ location: locationi }, (results, status) => {
       if (status === "OK") {
         if (results[0]) {
-          $scope.busqueda = results[0].formatted_address;
+          busqueda = results[0].formatted_address;
         } else {
           //window.alert("No results found");
         }
@@ -235,7 +235,7 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.geocoder.geocode({ location: locationi }, (results, status) => {
       if (status === "OK") {
         if (results[0]) {
-          $scope.busqueda = results[0].formatted_address;
+          busqueda = results[0].formatted_address;
         } else {
           //window.alert("No results found");
         }
