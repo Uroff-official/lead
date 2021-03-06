@@ -171,7 +171,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 
 formApp.controller('MapCtrl', function ($scope) {
   $scope.buscar = false;
-  $scope.busqueda = {};
+  $scope.busqueda = undefined;
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
   $scope.map = new google.maps.Map(document.getElementById('map'));
@@ -196,12 +196,12 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.geocoder.geocode({ location: locationi }, (results, status) => {
       if (status === "OK") {
         if (results[0]) {
-          console.log(results[0].formatted_address);
+          $scope.busqueda = results[0].formatted_address;
         } else {
-          window.alert("No results found");
+          //window.alert("No results found");
         }
       } else {
-        window.alert("Geocoder failed due to: " + status);
+        //window.alert("Geocoder failed due to: " + status);
       }
     });
 
@@ -231,6 +231,21 @@ formApp.controller('MapCtrl', function ($scope) {
     $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
     $scope.buscar = true;
     locationi = $scope.autocomplete.getPlace().geometry.location;
+
+
+    $scope.geocoder.geocode({ location: locationi }, (results, status) => {
+      if (status === "OK") {
+        if (results[0]) {
+          $scope.busqueda = results[0].formatted_address;
+        } else {
+          //window.alert("No results found");
+        }
+      } else {
+        //window.alert("Geocoder failed due to: " + status);
+      }
+    });
+
+
     $scope.lat = locationi.lat();
     $scope.lng = locationi.lng();
     $scope.$apply();
