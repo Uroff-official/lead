@@ -170,6 +170,7 @@ formApp.controller('formController', function ($scope, $http, $state) {
 });
 
 formApp.controller('MapCtrl', function ($scope) {
+  $scope.busqueda = undefined;
   $scope.buscar = false;
   angular.element(document).ready(function () {
   var winInfo = new google.maps.InfoWindow();
