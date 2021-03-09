@@ -138,6 +138,12 @@ formApp.controller('formController', function ($scope, $http, $state) {
           //console.log($scope.autocomplete);
           url = url + "&entry.2132323958="+busqueda;
         }
+
+        if($scope.espacios.telefono){
+          url = url + "&entry.733449331="+$scope.espacios.telefono;
+        }
+
+
         //alert(url);
         $state.go("form.greetings");
         alert('Información Enviada!');
